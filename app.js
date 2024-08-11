@@ -8,11 +8,11 @@ var cors = require("cors")
 
 // import du model!!
 
-const model = require("./models/lrbbhm")
+//const model = require("./models/lrbbhm")
 
 
 // router
-
+/*
 const categorieRouter = require("./routes/Categorie")
 const joueurRouter = require("./routes/Joueur")
 const equipeRouter = require("./routes/Equipe")
@@ -22,7 +22,8 @@ const rencontreRouter = require("./routes/Rencontre")
 const statRouter = require("./routes/Statistique")
 const userRouter = require("./routes/User")
 const coachRouter = require("./routes/Coach")
-
+*/
+var indexRouter = require("./routes/index")
 var app = express();
 
 // view engine setup
@@ -38,6 +39,7 @@ app.use(cors())
 
 
 // Les routes
+/*
 app.use("/api.categorie/",categorieRouter)
    .use("/api.joueur/",joueurRouter)
    .use("/api.joueur/",joueurRouter)
@@ -47,7 +49,9 @@ app.use("/api.categorie/",categorieRouter)
    .use("/api.rencontre/", rencontreRouter)
    .use("/api.stat/", statRouter)
    .use("/api.user/", userRouter)
-   .use("/api.coach/", coachRouter)
+   .use("/api.coach/", coachRouter)*/
+
+   app.use("/",indexRouter)
 
 
 // catch 404 and forward to error handler
@@ -70,6 +74,6 @@ app.use(function(err, req, res, next) {
 
 
 
-console.log(require("sequelize"))
+//console.log(require("sequelize"))
 
 module.exports = app;

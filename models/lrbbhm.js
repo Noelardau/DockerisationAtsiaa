@@ -1,8 +1,13 @@
 const Sequelize = require("sequelize")
 const {DataTypes, Model} = Sequelize
 
-const db = new Sequelize("lrbbhm","root","",{
+
+
+const db = new Sequelize(process.env.DB_NAME || 'lrbbhm',
+    process.env.DB_USER || 'root',
+    process.env.DB_PASSWORD || '',{
     dialect:"mysql",
+    host: process.env.DB_HOST || 'localhost',
     define:{
         freezeTableName: true,
         timestamps: false
